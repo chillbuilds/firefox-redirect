@@ -12,7 +12,7 @@
     "content_scripts": [
       {
         "matches": ["*://*/*"],
-        "js": ["jquery.js", "index.js"]
+        "js": ["scripts/jquery.js", "scripts/redirect.js", "scripts/neopets.js"]
       }
     ],
 
