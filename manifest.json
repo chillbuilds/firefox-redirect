@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "firefox-redirect",
+    "version": "1.0",
+  
+    "description": "redirects urls",
+  
+    "icons": {
+      "48": "icons/ext-icon.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["jquery.js", "index.js"]
+      }
+    ],
+
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "some-name@example.org"
+      }
+    }
+} 
