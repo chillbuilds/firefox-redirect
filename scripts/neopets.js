@@ -7,7 +7,8 @@ if(parsedHostname(window.location.href) == 'https://www.neopets.com/bank.phtml')
     $('#txtCurrentBalance1').text(balance)
 }
 
-if(parsedHostname(window.location.hostname) == 'neopets.com'){
+if(parsedHostname(window.location.hostname) == 'neopets.com' && 
+   window.location.href != 'https://www.neopets.com/'){
 
     $(document).ready(function() {
 
@@ -66,7 +67,19 @@ if(parsedHostname(window.location.hostname) == 'neopets.com'){
             <div id="userLinks">
             </div>
 
+            <div style="margin-top:8px; cursor:pointer;" onClick="collectVE()">
+                collect void essence
+            </div>
+
             <script>
+
+            let collectVE = () => {
+                if($('.tvw-essence')){
+                    console.log($('.tvw-essence'))
+                    let ve = $('.tvw-essence')
+                    $(ve[0]).click()
+                }
+            }
 
             let removeLink = (title) => {
                 let confirmResponse = confirm(\`are you sure you want to delete the following link: \${title}\`)
@@ -167,7 +180,7 @@ if(parsedHostname(window.location.hostname) == 'neopets.com'){
                     if(currentLinks.length != storedLinks.length){
                         updateLinks()
                     }
-                }, 1000)
+                }, 2000)
             </script>
             `)
 
